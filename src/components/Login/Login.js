@@ -84,7 +84,6 @@ const Login = () => {
             <form onSubmit={login}>
               <div className="form-group">
                 <label htmlFor="email">Email</label>
-                {/* Input field for email */}
                 <input 
                   value={email} 
                   onChange={(e) => setEmail(e.target.value)} 
@@ -92,14 +91,14 @@ const Login = () => {
                   name="email" 
                   id="email" 
                   className="form-control" 
-                  placeholder="Enter your email" 
-                  aria-describedby="helpId" 
+                  placeholder="Enter your email"
+                  pattern="/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/"
+                  aria-describedby="helpId"
+                  required
                 />
               </div>
-              {/* Input field for password */}
               <div className="form-group">
                 <label htmlFor="password">Password</label>
-                {/* Input field for email */}
                 <input 
                   value={password} 
                   onChange={(e) => setPassword(e.target.value)} 
@@ -108,11 +107,11 @@ const Login = () => {
                   id="password" 
                   className="form-control" 
                   placeholder="Enter your password" 
-                  aria-describedby="helpId" 
+                  aria-describedby="helpId"
+                  required
                 />
               </div>
               <div className="btn-group">
-                {/* Login button */}
                 <button type="submit" onClick={login} className="btn btn-primary mb-2 mr-1 waves-effect waves-light">
                   Login
                 </button>

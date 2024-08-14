@@ -20,7 +20,7 @@
     font-weight: 900;
 }
 .text-gradient {
-    background: linear-gradient(45deg,#2190FF 2.34%,#b673f8 100.78%);
+    background: linear-gradient(45deg,#FF8E3C 2.34%,#D9376E 100.78%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -36,7 +36,7 @@
 .hero-section .button {
     padding: 0.7rem 2rem;
     border-radius: 25px;
-    background-color: #2190FF;
+    background-color: #FF8E3C;
     color: #fff;
     border: 1px solid transparent;
     width: 15%;
@@ -152,7 +152,7 @@ li {
 }
 
 .blue {
-    background-color: #2937a392;
+    background-color: #FF8E3C;
     position: absolute;
     top:0;
     left: 0;
@@ -164,7 +164,7 @@ li {
     animation: blobani 8s infinite ease;
 }
 .blue1 {
-    background-color: #2937a392;
+    background-color: #FF8E3C;
     position: absolute;
     top:0;
     left: 0;

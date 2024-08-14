@@ -113,7 +113,7 @@ const Login = () => {
               </div>
               <div className="btn-group">
                 {/* Login button */}
-                <button type="submit" className="btn btn-primary mb-2 mr-1 waves-effect waves-light">
+                <button type="submit" onClick={login} className="btn btn-primary mb-2 mr-1 waves-effect waves-light">
                   Login
                 </button>
                 <button

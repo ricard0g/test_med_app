@@ -164,7 +164,7 @@ nav {
 }
 
 .btn2 {
-    border: 2px solid #3685fb;
+    border: 2px solid #FF8E3C;
     background-color: white;
     color: black;
     border-radius: 50px;
@@ -176,7 +176,7 @@ nav {
 }
 
 .btn2:hover {
-    background-color:#3685fb; /* Hover effect */
+    background-color:#FF8E3C; /* Hover effect */
     color:white; /* Hover effect */
 }
   

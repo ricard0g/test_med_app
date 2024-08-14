@@ -53,6 +53,7 @@ const Sign_Up = () => {
       // Redirect user to home page
       navigate("/");
       window.location.reload(); // Refresh the page
+      console.log("Till the end brotha!")
     } else {
       if (json.errors) {
         for (const error of json.errors) {
@@ -162,6 +163,7 @@ const Sign_Up = () => {
               {/* Login button */}
               <button
                 type="submit"
+                onClick={register}
                 className="btn btn-primary mb-2 mr-1 waves-effect waves-light"
               >
                 Submit

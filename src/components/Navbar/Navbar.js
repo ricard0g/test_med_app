@@ -71,6 +71,9 @@ const Navbar = () => {
         {isLoggedIn ? (
           <>
             <li className="link">
+                Welcome, {username.replace("@gmail.com", '')}
+            </li>
+            <li className="link">
               <button className="btn2" onClick={handleLogout}>
                 Logout
               </button>

@@ -17,16 +17,16 @@ const Landing_Page = () => {
             <br />
             <span className="text-gradient">Our Responsibility</span>
           </h1>
-          <div class="blob-cont">
+          <div className="blob-cont">
             {" "}
             {/* Creating a div with class name 'blob-cont' */}
-            <div class="blue blob"></div>{" "}
+            <div className="blue blob"></div>{" "}
             {/* Creating a blue blob inside the 'blob-cont' div */}
           </div>
-          <div class="blob-cont">
+          <div className="blob-cont">
             {" "}
             {/* Creating another div with class name 'blob-cont' */}
-            <div class="blue1 blob"></div>{" "}
+            <div className="blue1 blob"></div>{" "}
             {/* Creating a different blue blob inside the second 'blob-cont' div */}
           </div>
           <h4>
@@ -36,7 +36,7 @@ const Landing_Page = () => {
           <a href="#services">
             {" "}
             {/* Creating a hyperlink to jump to the 'services' section */}
-            <button class="button">Get Started</button>{" "}
+            <button className="button">Get Started</button>{" "}
             {/* Creating a button with class name 'button' */}
           </a>
         </div>

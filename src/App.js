@@ -17,7 +17,7 @@ import Sign_Up from './components/Sign_Up/Sign_Up.js';
 import Login from './components/Login/Login.js';
 
 // Import Instant Consultation
-import InstantConsultation from './components/InstantConsultationBooking/InstantConsultation.js';
+import InstantConsultation from './components/InstantConsultationBooking/InstantConsultation';
 
 // Function component for the main App
 function App() {

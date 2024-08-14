@@ -62,7 +62,7 @@
   }
   
   .book-appoinment-btn {
-    background-color: #3498db;
+    background-color: #ff8d3cda;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -107,7 +107,7 @@
 .modal-btn {
   display: inline-block;
   padding: 8px 16px;
-  background-color: #2196f3;
+  background-color: #ff8d3cda;
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -123,7 +123,7 @@
 
 }
 .modal-btn:hover {
-  background-color: #0d8af5;
+  background-color: #ff8d3cda;
 }
 
 .cancel-appointment-btn {
@@ -171,7 +171,7 @@ textarea {
 
 button {
   padding: 12px 20px;
-  background-color: #007bff;
+  background-color: #ff8d3cda;
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -180,7 +180,7 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #ff8d3cda;
 }
 
 

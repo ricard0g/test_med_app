@@ -10,6 +10,12 @@ import Navbar from './components/Navbar/Navbar.js';
 // Import Landing Page
 import Landing_Page from './components/Landing_Page/Landing_Page.js';
 
+// Import Sign Up
+import Sign_Up from './components/Sign_Up/Sign_Up.js';
+
+// Import Login
+import Login from './components/Login/Login.js';
+
 // Function component for the main App
 function App() {
 
@@ -24,6 +30,8 @@ function App() {
           {/* Set up the Routes for different pages */}
           <Routes>
             <Route path='/' element={<Landing_Page />} />
+            <Route path='/signup' element={<Sign_Up />} />
+            <Route path='/login' element={<Login />} />
           </Routes>
         </BrowserRouter>
     </div>

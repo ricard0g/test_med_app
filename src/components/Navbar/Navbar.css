@@ -58,20 +58,20 @@ nav {
 
 /* Hover effect for links in the dropdown menu */
 .dropdown-menu li a:hover {
-    color: #2190ff;
+    color: #FF8E3C;
 }
 
 /* Styling for the logo in the navbar */
 .nav__logo {
     font-size: 2rem;
     font-weight: 600;
-    color: #0d213f;
+    color: #FF8E3C;
     cursor: pointer;
 }
 
 /* Styling for a span within the logo */
 .nav__logo span {
-    color: #3685fb;
+    color: #FF8E3C;
 }
 
 /* Styling for the icon in the navbar */
@@ -100,7 +100,7 @@ nav {
 
 /* Hover effect for individual links in the navigation */
 .link a:hover {
-    color: #3685fb;
+    color: #FF8E3C;
 }
 
 /* Media queries for mobile responsiveness */

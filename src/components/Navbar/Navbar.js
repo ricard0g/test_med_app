@@ -68,11 +68,11 @@ const Navbar = () => {
         <li className="link">
           <Link to="/reviews">Reviews</Link>
         </li>
-        <li className="link">
-          <Link to="/booking-consultation">Book Consultation</Link>
-        </li>
         {isLoggedIn ? (
           <>
+            <li className="link">
+                <Link to="/booking-consultation">Book Consultation</Link>
+            </li>
             <li className="link">
                 Welcome, {username.replace("@gmail.com", '')}
             </li>

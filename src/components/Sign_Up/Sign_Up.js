@@ -153,6 +153,7 @@ const Sign_Up = () => {
                                 className="form-control"
                                 placeholder="Enter your password"
                                 aria-describedby="helpId"
+                                minlength="8"
                                 required
                             />
                             {showerr && (

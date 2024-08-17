@@ -19,6 +19,9 @@ import Login from './components/Login/Login.js';
 // Import Instant Consultation
 // import InstantConsultation from './components/InstantConsultationBooking/InstantConsultation';
 
+// Import Review Form
+import ReviewForm from './components/ReviewForm/ReviewForm.js';
+
 // Import Booking Consultation
 import BookingConsultation from './components/BookingConsultation.js';
 
@@ -36,10 +39,11 @@ function App() {
           {/* Set up the Routes for different pages */}
           <Routes>
             <Route path='/' element={<Landing_Page />} />
+            <Route path='/reviews' element={<ReviewForm />} />
+            <Route path="/booking-consultation" element={<BookingConsultation />} />
             <Route path='/signup' element={<Sign_Up />} />
             <Route path='/login' element={<Login />} />
             {/* <Route path="/instant-consultation" element={<InstantConsultation />} /> */}
-            <Route path="/booking-consultation" element={<BookingConsultation />} />
           </Routes>
         </BrowserRouter>
     </div>

@@ -21,7 +21,7 @@ export default function ReviewForm() {
           jsonResponse.map((doctor) => {
             return {
               name: doctor.name,
-              specialty: doctor.speciality,
+              speciality: doctor.speciality,
             };
           })
         );
@@ -33,35 +33,35 @@ export default function ReviewForm() {
 
   return (
     <>
-      <section className="reviews-container">
-        <h2 className="reviews-title">Reviews</h2>
-        <table>
-          <thead>
-            <tr>
-              <th scope="col">Serial Number</th>
-              <th scope="col">Doctor Name</th>
-              <th scope="col">Doctor speciality</th>
-              <th scope="col">Provide Feedback</th>
-              <th scope="col">Review Given</th>
-            </tr>
-          </thead>
-          <tbody>
-            {doctors.map((doctor, index) => {
-              return (
-                <tr>
-                  <td>{index}</td>
-                  <td>{doctor.name}</td>
-                  <td>{doctor.speciality}</td>
-                  <td>
-                    <button>Click Here</button>
-                  </td>
-                  <td></td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-      </section>
+        <section className="reviews-container">
+          <h2 className="reviews-title">Reviews</h2>
+          <table className="reviews-table">
+            <thead>
+              <tr>
+                <th scope="col">Serial Number</th>
+                <th scope="col">Doctor Name</th>
+                <th scope="col">Doctor speciality</th>
+                <th scope="col">Provide Feedback</th>
+                <th scope="col">Review Given</th>
+              </tr>
+            </thead>
+            <tbody>
+              {doctors.map((doctor, index) => {
+                return (
+                  <tr>
+                    <td>{index}</td>
+                    <td>{doctor.name}</td>
+                    <td>{doctor.speciality}</td>
+                    <td>
+                      <button>Click Here</button>
+                    </td>
+                    <td></td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </section>
     </>
   );
 }

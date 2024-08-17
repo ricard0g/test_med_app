@@ -1,6 +1,37 @@
 .reviews-container {
-    margin-top: 120px;
-    width: 80%;
-    height: auto;
+  margin: 120px auto 0 auto;
+  width: 80%;
+  height: auto;
+  padding-bottom: 5vh;
 }
 
+.reviews-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+}
+
+.reviews-table {
+  width: 100%;
+  text-align: left;
+  border-spacing: 0px;
+}
+
+tr {
+  height: 8vh;
+}
+
+tr th {
+    background-color: rgba(128, 128, 128, 0.177);
+    padding: 0 1vw;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+tr td {
+    padding: 0 1vw;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+td > button {
+    width: 80%;
+    margin: 0 auto;
+}

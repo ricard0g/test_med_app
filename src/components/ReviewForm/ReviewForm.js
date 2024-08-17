@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./ReviewForm.css";
+import GiveReview from './GiveReview.js';
 
 export default function ReviewForm() {
   const [doctors, setDoctors] = useState([]);
@@ -53,7 +54,7 @@ export default function ReviewForm() {
                     <td>{doctor.name}</td>
                     <td>{doctor.speciality}</td>
                     <td>
-                      <button>Click Here</button>
+                      {GiveReview}
                     </td>
                     <td></td>
                   </tr>

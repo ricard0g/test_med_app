@@ -4,7 +4,7 @@ import "./GiveReview.css";
 import Popup from "reactjs-popup";
 
 // Function component for giving reviews
-function GiveReviews({formData, setFormData}) {
+function GiveReviews({ formData, setFormData }) {
   // State variables using useState hook
   const [showForm, setShowForm] = useState(false);
   const [submittedMessage, setSubmittedMessage] = useState("");
@@ -88,8 +88,15 @@ function GiveReviews({formData, setFormData}) {
               />
             </div>
             <div>
-              <label htmlFor="rating">Review:</label>
-              <input type="range" min="0" max="5" step="1" />
+              <label htmlFor="rating">Rating:</label>
+              <input
+                type="range"
+                min="0"
+                max="5"
+                step="1"
+                onChange={handleChange}
+              />
+              <span>{formData.rating}</span>
             </div>
             {/* Submit button for form submission */}
             <button type="submit">Submit</button>

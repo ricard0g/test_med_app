@@ -4,10 +4,15 @@ import "./GiveReview.css";
 import Popup from "reactjs-popup";
 
 // Function component for giving reviews
-function GiveReviews({ formData, setFormData }) {
+function GiveReviews({
+  formData,
+  setFormData,
+  submittedMessage,
+  setSubmittedMessage,
+  doctor
+}) {
   // State variables using useState hook
   const [showForm, setShowForm] = useState(false);
-  const [submittedMessage, setSubmittedMessage] = useState("");
   const [showWarning, setShowWarning] = useState(false);
 
   // Function to handle button click event
@@ -18,13 +23,13 @@ function GiveReviews({ formData, setFormData }) {
   // Function to handle form input changes
   const handleChange = (e) => {
     // Update the form data based on user input
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+      setFormData({ ...formData, doctor: doctor ,[e.target.name]: e.target.value });
   };
 
   // Function to handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSubmittedMessage(formData);
+    setSubmittedMessage(formData.review);
     setFormData({
       name: "",
       review: "",
@@ -94,7 +99,9 @@ function GiveReviews({ formData, setFormData }) {
                 min="0"
                 max="5"
                 step="1"
-                onChange={handleChange}
+                onChange={(e) =>
+                  setFormData({ ...formData, rating: e.target.value })
+                }
               />
               <span>{formData.rating}</span>
             </div>
@@ -102,13 +109,6 @@ function GiveReviews({ formData, setFormData }) {
             <button type="submit">Submit</button>
           </form>
         </Popup>
-      )}
-      {/* Display the submitted message if available */}
-      {submittedMessage && (
-        <div>
-          <h3>Submitted Message:</h3>
-          <p>{submittedMessage}</p>
-        </div>
       )}
     </div>
   );

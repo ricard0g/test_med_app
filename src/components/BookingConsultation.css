@@ -1,3 +1,18 @@
+.login-alert {
+    font-size: 1.5rem;
+    background-color: #D9376E;
+    color: #FFFFFE;
+    font-weight: 600;
+    width: 65%;
+    border-radius: 10px;
+    margin: 5vh auto;
+}
+
+.login-alert-span {
+    color: #ffba89;
+    font-weight: 800;
+}
+
 .searchpage-container {
     max-width: 1200px;
     margin: auto;

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import "./Navbar.css";
 
-const Navbar = () => {
+const Navbar = ({setIsLogged}) => {
   const [click, setClick] = useState(false);
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -30,6 +30,7 @@ const Navbar = () => {
       }
     }
     setEmail("");
+    setIsLogged(false);
     window.location.reload();
   };
   const handleDropdown = () => {
@@ -60,7 +61,7 @@ const Navbar = () => {
           <Link to="/">Home</Link>
         </li>
         <li className="link">
-          <Link to="/search/doctors">Appointments</Link>
+          <Link to="/appointments">Appointments</Link>
         </li>
         <li className="link">
           <Link to="/healthblog">Health Blog</Link>

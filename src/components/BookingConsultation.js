@@ -4,7 +4,7 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import FindDoctorSearch from './FindDoctorSearch/FindDoctorSearch.js';
 import DoctorCard from './DoctorCard/DoctorCard.js';
 
-const BookingConsultation = () => {
+const BookingConsultation = ({isLogged}) => {
     const [searchParams] = useSearchParams();
     const [doctors, setDoctors] = useState([]);
     const [filteredDoctors, setFilteredDoctors] = useState([]);
@@ -61,6 +61,11 @@ const BookingConsultation = () => {
     return (
         <center>
             <div  className="searchpage-container">
+                {!isLogged ? (
+                    <>
+                        <p className='login-alert'>You'll Need to <span className='login-alert-span'>Login</span> to Book your Consultation!</p>
+                    </>
+                ) : null}
             <FindDoctorSearch onSearch={handleSearch} />
             <div className="search-results-container">
             {isSearched ? (
@@ -68,7 +73,7 @@ const BookingConsultation = () => {
                     <h2>{filteredDoctors.length} doctors are available {searchParams.get('location')}</h2>
                     <h3>Book appointments with minimum wait-time & verified doctor details</h3>
                     {filteredDoctors.length > 0 ? (
-                    filteredDoctors.map(doctor => <DoctorCard className="doctorcard" {...doctor} key={doctor.name} />)
+                    filteredDoctors.map(doctor => <DoctorCard isLogged={isLogged} className="doctorcard" {...doctor} key={doctor.name} />)
                     ) : (
                     <p>No doctors found.</p>
                     )}

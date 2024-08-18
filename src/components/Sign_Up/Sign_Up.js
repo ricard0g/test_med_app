@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { API_URL } from "../../config";
 
 // Function component for Sign Up form
-const Sign_Up = () => {
+const Sign_Up = ({setIsLogged}) => {
     // State variables using useState hook
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -51,6 +51,7 @@ const Sign_Up = () => {
             sessionStorage.setItem("email", email);
 
             // Redirect user to home page
+            setIsLogged(true);
             navigate("/");
             window.location.reload(); // Refresh the page
         } else {

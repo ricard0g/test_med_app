@@ -1,5 +1,5 @@
 // Import necessary modules from React library
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 // Import components for routing from react-router-dom library
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -27,6 +27,8 @@ import BookingConsultation from './components/BookingConsultation.js';
 
 // Function component for the main App
 function App() {
+    const [isLogged, setIsLogged] = useState(false);
+    console.log(isLogged);
 
   // Render the main App component
   return (
@@ -34,15 +36,16 @@ function App() {
         {/* Set up BrowserRouter for routing */}
         <BrowserRouter>
           {/* Display the Navbar component */}
-          <Navbar/>
+          <Navbar setIsLogged={setIsLogged}/>
 
           {/* Set up the Routes for different pages */}
           <Routes>
             <Route path='/' element={<Landing_Page />} />
             <Route path='/reviews' element={<ReviewForm />} />
-            <Route path="/booking-consultation" element={<BookingConsultation />} />
-            <Route path='/signup' element={<Sign_Up />} />
-            <Route path='/login' element={<Login />} />
+            <Route path='/appointments' element={<BookingConsultation isLogged={isLogged} />} />
+            <Route path="/booking-consultation" element={<BookingConsultation isLogged={isLogged} />} />
+            <Route path='/signup' element={<Sign_Up setIsLogged={setIsLogged} />} />
+            <Route path='/login' element={<Login setIsLogged={setIsLogged} />} />
             {/* <Route path="/instant-consultation" element={<InstantConsultation />} /> */}
           </Routes>
         </BrowserRouter>

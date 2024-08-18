@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { API_URL } from '../../config';
 
-const Login = () => {
+const Login = ({setIsLogged}) => {
 
   // State variables for email and password
   const [password, setPassword] = useState("");
@@ -50,6 +50,7 @@ const Login = () => {
       sessionStorage.setItem('email', email);
 
       // Redirect to home page and reload the window
+        setIsLogged(true)
       navigate('/');
       window.location.reload();
     } else {

@@ -4,13 +4,6 @@ import GiveReview from "./GiveReview.js";
 
 export default function ReviewForm() {
   const [doctors, setDoctors] = useState([]);
-  const [formData, setFormData] = useState({
-    doctor: "",
-    name: "",
-    review: "",
-    rating: 0,
-  });
-  const [submittedMessage, setSubmittedMessage] = useState("");
 
   useEffect(() => {
     getDoctors();
@@ -56,29 +49,10 @@ export default function ReviewForm() {
           <tbody>
             {doctors.map((doctor, index) => {
               return (
-                <tr key={index}>
-                  <td>{index}</td>
-                  <td>{doctor.name}</td>
-                  <td>{doctor.speciality}</td>
-                  <td>
-                    {
-                      <GiveReview
-                        formData={formData}
-                        setFormData={setFormData}
-                        submittedMessage={submittedMessage}
-                        setSubmittedMessage={setSubmittedMessage}
-                        doctor={doctor.name}
-                      />
-                    }
-                  </td>
-                  <td>
-                    {doctor.name === formData.doctor.name && submittedMessage.review && (
-                      <div>
-                        <p>{submittedMessage.review}</p>
-                      </div>
-                    )}
-                  </td>
-                </tr>
+                <GiveReview
+                  doctor={doctor}
+                  index={index}
+                />
               );
             })}
           </tbody>

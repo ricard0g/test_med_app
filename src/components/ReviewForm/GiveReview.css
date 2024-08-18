@@ -2,3 +2,18 @@
     width: 80%;
     margin: 0 auto;
 }
+
+tr {
+  height: 8vh;
+  width: 100%;
+}
+
+tr td {
+    padding: 0 1vw;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+td > button {
+    width: 80%;
+    margin: 0 auto;
+}

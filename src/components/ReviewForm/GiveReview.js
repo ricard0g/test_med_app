@@ -57,8 +57,8 @@ function GiveReviews({ doctor, index }) {
               borderRadius: "10px",
             }}
             trigger={
-              <button className="click-button" onClick={handleButtonClick}>
-                Click Here
+              <button disabled={submittedMessage.review && "disabled"} className={submittedMessage.review ?"click-button already-reviewed" : "click-button"} onClick={handleButtonClick}>
+                {submittedMessage.review ? "Already Reviewed" : "Click Here"}
               </button>
             }
             modal

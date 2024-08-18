@@ -16,22 +16,8 @@
   border-spacing: 0px;
 }
 
-tr {
-  height: 8vh;
-}
-
 tr th {
     background-color: rgba(128, 128, 128, 0.177);
     padding: 0 1vw;
     border-bottom: 1px solid rgba(0, 0, 0, 0.4);
-}
-
-tr td {
-    padding: 0 1vw;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
-}
-
-td > button {
-    width: 80%;
-    margin: 0 auto;
 }

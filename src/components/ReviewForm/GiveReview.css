@@ -3,6 +3,14 @@
     margin: 0 auto;
 }
 
+.already-reviewed {
+    background-color: #D9376E;
+}
+
+.already-reviewed:hover {
+    background-color: #D9376E;
+}
+
 tr {
   height: 8vh;
   width: 100%;

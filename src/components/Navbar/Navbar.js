@@ -83,7 +83,7 @@ const Navbar = ({ setIsLogged }) => {
                       <Link to="/profile">Your Profile</Link>
                     </li>
                     <li>
-                      <a href="#"></a>
+                      <Link to="/reports">Your Reports</Link>
                     </li>
                   </ul>
                 </>

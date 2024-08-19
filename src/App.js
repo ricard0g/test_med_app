@@ -28,6 +28,9 @@ import BookingConsultation from './components/BookingConsultation.js';
 // Import Profile Card
 import ProfileCard from './components/ProfileCard/ProfileCard.js';
 
+// Import Reports Layout
+import ReportsLayout from './components/ReportsLayout/ReportsLayout.js';
+
 // Function component for the main App
 function App() {
     const [isLogged, setIsLogged] = useState(false);
@@ -48,6 +51,7 @@ function App() {
             <Route path='/appointments' element={<BookingConsultation isLogged={isLogged} />} />
             <Route path="/booking-consultation" element={<BookingConsultation isLogged={isLogged} />} />
             <Route path="/profile" element={<ProfileCard />} />
+            <Route path="/reports" element={<ReportsLayout />} />
             <Route path='/signup' element={<Sign_Up setIsLogged={setIsLogged} />} />
             <Route path='/login' element={<Login setIsLogged={setIsLogged} />} />
           </Routes>

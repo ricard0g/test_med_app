@@ -25,6 +25,9 @@ import ReviewForm from './components/ReviewForm/ReviewForm.js';
 // Import Booking Consultation
 import BookingConsultation from './components/BookingConsultation.js';
 
+// Import Profile Card
+import ProfileCard from './components/ProfileCard/ProfileCard.js';
+
 // Function component for the main App
 function App() {
     const [isLogged, setIsLogged] = useState(false);
@@ -44,9 +47,9 @@ function App() {
             <Route path='/reviews' element={<ReviewForm />} />
             <Route path='/appointments' element={<BookingConsultation isLogged={isLogged} />} />
             <Route path="/booking-consultation" element={<BookingConsultation isLogged={isLogged} />} />
+            <Route path="/profile" element={<ProfileCard />} />
             <Route path='/signup' element={<Sign_Up setIsLogged={setIsLogged} />} />
             <Route path='/login' element={<Login setIsLogged={setIsLogged} />} />
-            {/* <Route path="/instant-consultation" element={<InstantConsultation />} /> */}
           </Routes>
         </BrowserRouter>
     </div>

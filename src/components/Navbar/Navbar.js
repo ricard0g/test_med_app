@@ -80,7 +80,7 @@ const Navbar = ({ setIsLogged }) => {
                 <>
                   <ul className="dropdown-menu">
                     <li>
-                      <a href="#">Your Profile</a>
+                      <Link to="/profile">Your Profile</Link>
                     </li>
                     <li>
                       <a href="#"></a>

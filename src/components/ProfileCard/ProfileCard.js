@@ -3,9 +3,10 @@
 import React, { useEffect, useState } from "react";
 import { API_URL } from "../../config";
 import { useNavigate } from "react-router-dom";
+import './ProfileCard.css';
 
 // Define a Function component called ProfileForm
-const ProfileForm = () => {
+const ProfileCard = () => {
   // Set up state variables using the useState hook
   const [userDetails, setUserDetails] = useState({});
   const [updatedDetails, setUpdatedDetails] = useState({});
@@ -117,6 +118,24 @@ const ProfileForm = () => {
       {editMode ? (
         <form onSubmit={handleSubmit}>
           <label>
+            Name
+            <input
+              type="text"
+              name="name"
+              value={updatedDetails.name}
+              onChange={handleInputChange}
+            />
+          </label>
+          <label>
+            Phone
+            <input
+              type="tel"
+              name="phone"
+              value={updatedDetails.phone}
+              onChange={handleInputChange}
+            />
+          </label>
+          <label>
             Email
             <input
               type="email"
@@ -131,6 +150,8 @@ const ProfileForm = () => {
       ) : (
         <div className="profile-details">
           <h1>Welcome, {userDetails.name}</h1>
+          <p><strong>Email: </strong>{userDetails.email}</p>
+          <p><strong>Phone: </strong>{userDetails.phone}</p>
           {/* Implement code to display and allow editing of phone and email similar to above */}
           <button onClick={handleEdit}>Edit</button>
         </div>
@@ -140,4 +161,4 @@ const ProfileForm = () => {
 };
 
 // Export the ProfileForm component as the default export
-export default ProfileForm;
+export default ProfileCard;

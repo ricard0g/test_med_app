@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import "./Navbar.css";
 
-const Navbar = ({setIsLogged}) => {
+const Navbar = ({ setIsLogged }) => {
   const [click, setClick] = useState(false);
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -72,10 +72,22 @@ const Navbar = ({setIsLogged}) => {
         {isLoggedIn ? (
           <>
             <li className="link">
-                <Link to="/booking-consultation">Book Consultation</Link>
+              <Link to="/booking-consultation">Book Consultation</Link>
             </li>
-            <li className="link">
-                Welcome, {username.replace("@gmail.com", '')}
+            <li className="link" onClick={handleDropdown}>
+              Welcome, {username.replace("@gmail.com", "")}
+              {showDropdown && (
+                <>
+                  <ul className="dropdown-menu">
+                    <li>
+                      <a href="#">Your Profile</a>
+                    </li>
+                    <li>
+                      <a href="#"></a>
+                    </li>
+                  </ul>
+                </>
+              )}
             </li>
             <li className="link">
               <button className="btn2" onClick={handleLogout}>

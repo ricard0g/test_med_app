@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { API_URL } from '../../config';
 
-const Login = ({setIsLogged}) => {
+const Login = ({setIsLogged, isLogged}) => {
 
   // State variables for email and password
   const [password, setPassword] = useState("");
@@ -17,6 +17,7 @@ const Login = ({setIsLogged}) => {
   // Check if user is already authenticated, then redirect to home page
   useEffect(() => {
     if (sessionStorage.getItem("auth-token")) {
+        setIsLogged(!isLogged)
       navigate("/");
     }
   }, []);
@@ -48,9 +49,9 @@ const Login = ({setIsLogged}) => {
       // If authentication token is received, store it in session storage
       sessionStorage.setItem('auth-token', json.authtoken);
       sessionStorage.setItem('email', email);
+      setIsLogged(!isLogged);
 
       // Redirect to home page and reload the window
-        setIsLogged(true)
       navigate('/');
       window.location.reload();
     } else {

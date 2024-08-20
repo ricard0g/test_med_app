@@ -4,46 +4,46 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import FindDoctorSearch from './FindDoctorSearch/FindDoctorSearch.js';
 import DoctorCard from './DoctorCard/DoctorCard.js';
 
-const BookingConsultation = ({isLogged}) => {
+const BookingConsultation = ({ setIsLogged, isLogged, showNotification, setShowNotification }) => {
     const [searchParams] = useSearchParams();
     const [doctors, setDoctors] = useState([]);
     const [filteredDoctors, setFilteredDoctors] = useState([]);
     const [isSearched, setIsSearched] = useState(false);
-    
+
     const getDoctorsDetails = () => {
         fetch('https://api.npoint.io/9a5543d36f1460da2f63')
-        .then(res => res.json())
-        .then(data => {
-            if (searchParams.get('speciality')) {
-                // window.reload()
-                const filtered = data.filter(doctor => doctor.speciality.toLowerCase() === searchParams.get('speciality').toLowerCase());
+            .then(res => res.json())
+            .then(data => {
+                if (searchParams.get('speciality')) {
+                    // window.reload()
+                    const filtered = data.filter(doctor => doctor.speciality.toLowerCase() === searchParams.get('speciality').toLowerCase());
 
-                setFilteredDoctors(filtered);
-                
-                setIsSearched(true);
-                window.reload()
-            } else {
-                setFilteredDoctors([]);
-                setIsSearched(false);
-            }
-            setDoctors(data);
-        })
-        .catch(err => console.log(err));
+                    setFilteredDoctors(filtered);
+
+                    setIsSearched(true);
+                    window.reload()
+                } else {
+                    setFilteredDoctors([]);
+                    setIsSearched(false);
+                }
+                setDoctors(data);
+            })
+            .catch(err => console.log(err));
     }
     const handleSearch = (searchText) => {
 
         if (searchText === '') {
             setFilteredDoctors([]);
             setIsSearched(false);
-            } else {
-                
+        } else {
+
             const filtered = doctors.filter(
                 (doctor) =>
-                // 
-                doctor.speciality.toLowerCase().includes(searchText.toLowerCase())
-                
+                    // 
+                    doctor.speciality.toLowerCase().includes(searchText.toLowerCase())
+
             );
-                
+
             setFilteredDoctors(filtered);
             setIsSearched(true);
             window.location.reload()
@@ -52,37 +52,39 @@ const BookingConsultation = ({isLogged}) => {
     const navigate = useNavigate();
     useEffect(() => {
         getDoctorsDetails();
-        // const authtoken = sessionStorage.getItem("auth-token");
-        // if (!authtoken) {
-        //     navigate("/login");
-        // }
+        const authtoken = sessionStorage.getItem("auth-token");
+        if (!authtoken) {
+            setIsLogged(false);
+        } else {
+            setIsLogged(true);
+        }
     }, [searchParams])
 
     return (
         <center>
-            <div  className="searchpage-container">
-                {!isLogged ? (
+            <div className="searchpage-container">
+                {!isLogged && (
                     <>
                         <p className='login-alert'>You'll Need to <span className='login-alert-span'>Login</span> to Book your Consultation!</p>
                     </>
-                ) : null}
-            <FindDoctorSearch onSearch={handleSearch} />
-            <div className="search-results-container">
-            {isSearched ? (
-                <center>
-                    <h2>{filteredDoctors.length} doctors are available {searchParams.get('location')}</h2>
-                    <h3>Book appointments with minimum wait-time & verified doctor details</h3>
-                    {filteredDoctors.length > 0 ? (
-                    filteredDoctors.map(doctor => <DoctorCard isLogged={isLogged} className="doctorcard" {...doctor} key={doctor.name} />)
-                    ) : (
-                    <p>No doctors found.</p>
-                    )}
-                </center>
-                ) : (
-                ''
                 )}
+                <FindDoctorSearch onSearch={handleSearch} />
+                <div className="search-results-container">
+                    {isSearched ? (
+                        <center>
+                            <h2>{filteredDoctors.length} doctors are available {searchParams.get('location')}</h2>
+                            <h3>Book appointments with minimum wait-time & verified doctor details</h3>
+                            {filteredDoctors.length > 0 ? (
+                                filteredDoctors.map(doctor => <DoctorCard showNotification={showNotification} setShowNotification={setShowNotification} isLogged={isLogged} className="doctorcard" {...doctor} key={doctor.name} />)
+                            ) : (
+                                <p>No doctors found.</p>
+                            )}
+                        </center>
+                    ) : (
+                        ''
+                    )}
+                </div>
             </div>
-        </div>
         </center>
     )
 }

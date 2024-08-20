@@ -12,6 +12,8 @@ const DoctorCard = ({
   ratings,
   profilePic,
   isLogged,
+  showNotification,
+  setShowNotification
 }) => {
   const [showModal, setShowModal] = useState(false);
   const [appointments, setAppointments] = useState([]);
@@ -63,13 +65,6 @@ const DoctorCard = ({
             Ratings: {ratings}
           </div>
         </div>
-        {/* for reference  */}
-        {/* <div>
-              <button className='book-appointment-btn'>                    
-                <div>Book Appointment</div>
-              <div>No Booking Fee</div>
-            </button>
-              </div> */}
       </div>
 
       <div className="doctor-card-options-container">
@@ -145,6 +140,8 @@ const DoctorCard = ({
                   doctorName={name}
                   doctorSpeciality={speciality}
                   onSubmit={handleFormSubmit}
+                  showNotification={showNotification}
+                  setShowNotification={setShowNotification}
                 />
               )}
             </div>
